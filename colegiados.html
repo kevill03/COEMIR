@@ -65,15 +65,20 @@
           <h2>Directorio de Colegiados</h2>
           <div class="divider"></div>
         </div>
-        
+
         <p class="intro-text">
-          Conoce a los profesionales de la odontología registrados y solventes en el Estado Miranda.
+          Conoce a los profesionales de la odontología registrados y solventes
+          en el Estado Miranda.
         </p>
 
         <!-- BARRA DE BÚSQUEDA -->
         <div class="search-container">
           <i class="fas fa-search"></i>
-          <input type="text" id="searchInput" placeholder="Buscar por nombre, apellido o cédula...">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar por nombre, apellido o cédula..."
+          />
         </div>
 
         <!-- CONTENEDOR DE LA TABLA -->
@@ -87,11 +92,11 @@
                 <th>Profesión/Ocupación</th>
                 <th>Especialidad</th>
                 <th>Universidad</th>
-                <th class="mobile-toggle"></th> <!-- Columna vacía en desktop para el icono de móvil -->
+                <th class="mobile-toggle"></th>
+                <!-- Columna vacía en desktop para el icono de móvil -->
               </tr>
             </thead>
             <tbody id="colegiados-tbody">
-              
               <!-- TEMPLATE DE FILA -->
               <!-- En móvil, al hacer click en la fila (tr) se añade la clase 'expanded' que despliega los datos ocultos -->
               <tr onclick="this.classList.toggle('expanded')">
@@ -101,10 +106,12 @@
                 <td data-label="Profesión/Ocupación">Odontólogo</td>
                 <td data-label="Especialidad">Ortodoncia</td>
                 <td data-label="Universidad">UCV</td>
-                <td class="mobile-toggle"><i class="fas fa-chevron-down"></i></td>
+                <td class="mobile-toggle">
+                  <i class="fas fa-chevron-down"></i>
+                </td>
               </tr>
               <!-- FIN DEL TEMPLATE -->
-              
+
               <!-- EJEMPLO 2 -->
               <tr onclick="this.classList.toggle('expanded')">
                 <td data-label="Nombres y apellidos">Dra. María González</td>
@@ -113,10 +120,11 @@
                 <td data-label="Profesión/Ocupación">Odontólogo</td>
                 <td data-label="Especialidad">Odontopediatría</td>
                 <td data-label="Universidad">UGMA</td>
-                <td class="mobile-toggle"><i class="fas fa-chevron-down"></i></td>
+                <td class="mobile-toggle">
+                  <i class="fas fa-chevron-down"></i>
+                </td>
               </tr>
               <!-- FIN EJEMPLO 2 -->
-
             </tbody>
           </table>
         </div>
