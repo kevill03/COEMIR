@@ -801,3 +801,211 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* 7. DIRECTORIO DE COLEGIADOS (TABLA) */
+.colegiados-section {
+    padding: 80px 0;
+}
+
+.colegiados-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.colegiados-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+}
+
+.colegiados-table th,
+.colegiados-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.colegiados-table th {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.colegiados-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.colegiados-table tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+.colegiados-table td {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.colegiados-table td:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Ocultar la columna de toggle en desktop */
+.colegiados-table th.mobile-toggle,
+.colegiados-table td.mobile-toggle {
+    display: none;
+}
+
+/* Responsividad para móviles (Tab Expandible) */
+@media (max-width: 991px) {
+    .colegiados-table-container {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    .colegiados-table {
+        min-width: 100%;
+    }
+    
+    .colegiados-table thead {
+        display: none;
+    }
+    
+    .colegiados-table tbody tr {
+        display: grid;
+        grid-template-columns: 1fr auto 40px;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: var(--bg-white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+    }
+    
+    .colegiados-table tbody tr:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .colegiados-table td {
+        display: none; /* Oculto por defecto */
+        grid-column: 1 / -1;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        text-align: right;
+        border-top: 1px solid var(--border-color);
+        border-bottom: none;
+    }
+    
+    /* Pestaña visible (Nombre, Cédula, Icono) */
+    .colegiados-table td:nth-child(1) {
+        display: block;
+        grid-column: 1;
+        border-top: none;
+        padding: 15px;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-align: left;
+    }
+    
+    .colegiados-table td:nth-child(2) {
+        display: block;
+        grid-column: 2;
+        border-top: none;
+        padding: 15px;
+        color: var(--text-muted);
+        text-align: right;
+    }
+    
+    .colegiados-table td.mobile-toggle {
+        display: flex;
+        grid-column: 3;
+        border-top: none;
+        padding: 15px 15px 15px 0;
+        justify-content: center;
+        align-items: center;
+        color: var(--secondary-color);
+    }
+    
+    .colegiados-table td.mobile-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+    /* Ocultar etiquetas (data-label) en la pestaña principal */
+    .colegiados-table td:nth-child(1)::before,
+    .colegiados-table td:nth-child(2)::before,
+    .colegiados-table td.mobile-toggle::before {
+        display: none;
+    }
+    
+    .colegiados-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--text-muted);
+        text-align: left;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    /* Estado Expandido */
+    .colegiados-table tbody tr.expanded td {
+        display: flex;
+    }
+    
+    .colegiados-table tbody tr.expanded td:nth-child(1),
+    .colegiados-table tbody tr.expanded td:nth-child(2) {
+        display: block;
+    }
+    
+    .colegiados-table tbody tr.expanded td.mobile-toggle i {
+        transform: rotate(180deg);
+    }
+}
+
+/* Estilos de la Sección y el Buscador de Colegiados */
+.colegiados-section .intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.search-container i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border-radius: 30px;
+    border: 2px solid var(--border-color);
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: var(--secondary-color) !important;
+}
+
