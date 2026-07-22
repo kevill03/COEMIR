@@ -24,29 +24,33 @@
   </head>
 
   <body>
-   <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="index.html">
-          <h1>COEMIR</h1>
-        </a>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <h1>COEMIR</h1>
+          </a>
+        </div>
+
+        <button
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-label="Abrir menú"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+            <li><a href="contacto.html">Contáctenos</a></li>
+          </ul>
+          <a href="colegiados.html" class="btn btn-secondary">Colegiados</a>
+        </nav>
       </div>
-
-      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav class="main-nav" id="main-nav">
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="publicaciones.html">Publicaciones</a></li>
-          <li><a href="contacto.html">Contáctenos</a></li>
-        </ul>
-        <a href="colegiados.html" class="btn btn-secondary">Colegiados</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
     <!-- DIRECTORIO DE COLEGIADOS SECTION -->
     <section class="colegiados-section section-bg">
@@ -80,7 +84,6 @@
                 <th>Cédula</th>
                 <th>N° COEMIR</th>
                 <th>Profesión/Ocupación</th>
-                <th>Especialidad</th>
                 <th>Universidad</th>
                 <th class="mobile-toggle"></th>
                 <!-- Columna vacía en desktop para el icono de móvil -->
@@ -89,12 +92,11 @@
             <tbody id="colegiados-tbody">
               <!-- TEMPLATE DE FILA -->
               <!-- En móvil, al hacer click en la fila (tr) se añade la clase 'expanded' que despliega los datos ocultos -->
-              <tr onclick="this.classList.toggle('expanded')">
+              <tr class="table-data-row">
                 <td data-label="Nombres y apellidos">Dr. Juan Pérez</td>
                 <td data-label="Cédula">V-12.345.678</td>
                 <td data-label="N° COEMIR">12345</td>
                 <td data-label="Profesión/Ocupación">Odontólogo</td>
-                <td data-label="Especialidad">Ortodoncia</td>
                 <td data-label="Universidad">UCV</td>
                 <td class="mobile-toggle">
                   <i class="fas fa-chevron-down"></i>
@@ -103,12 +105,11 @@
               <!-- FIN DEL TEMPLATE -->
 
               <!-- EJEMPLO 2 -->
-              <tr onclick="this.classList.toggle('expanded')">
+              <tr class="table-row">
                 <td data-label="Nombres y apellidos">Dra. María González</td>
                 <td data-label="Cédula">V-9.876.543</td>
                 <td data-label="N° COEMIR">54321</td>
                 <td data-label="Profesión/Ocupación">Odontólogo</td>
-                <td data-label="Especialidad">Odontopediatría</td>
                 <td data-label="Universidad">UGMA</td>
                 <td class="mobile-toggle">
                   <i class="fas fa-chevron-down"></i>
@@ -136,55 +137,61 @@
 
     <!-- FOOTER -->
     <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-about">
-        <h2 class="footer-logo">COEMIR</h2>
-        <p>
-          El Colegio de Odontólogos del Estado Miranda es la institución que
-          agrupa, defiende y representa a los profesionales de la odontología
-          en nuestra región, promoviendo la ética, la actualización científica
-          y el bienestar social del gremio.
-        </p>
-      </div>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <h2 class="footer-logo">COEMIR</h2>
+          <p>
+            El Colegio de Odontólogos del Estado Miranda es la institución que
+            agrupa, defiende y representa a los profesionales de la odontología
+            en nuestra región, promoviendo la ética, la actualización científica
+            y el bienestar social del gremio.
+          </p>
+        </div>
 
-      <div class="footer-links">
-        <h3>Enlaces Rápidos</h3>
-        <ul>
-          <li>
-            <a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a>
-          </li>
-          <li>
-            <a href="publicaciones.html"><i class="fas fa-chevron-right"></i> Publicaciones</a>
-          </li>
-          <li>
-            <a href="contacto.html"><i class="fas fa-chevron-right"></i> Contáctenos</a>
-          </li>
-        </ul>
-      </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li>
+              <a href="index.html"
+                ><i class="fas fa-chevron-right"></i> Inicio</a
+              >
+            </li>
+            <li>
+              <a href="publicaciones.html"
+                ><i class="fas fa-chevron-right"></i> Publicaciones</a
+              >
+            </li>
+            <li>
+              <a href="contacto.html"
+                ><i class="fas fa-chevron-right"></i> Contáctenos</a
+              >
+            </li>
+          </ul>
+        </div>
 
-      <div class="footer-contact">
-        <h3>Atención al Agremiado</h3>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> Urb. Campo Alegre, calle 28 de octubre, casa Nro.14,
-          Los Teques, Estado Miranda, Venezuela.
-        </p>
-        <p>
-          <i class="fas fa-phone-alt"></i> +58 (414) 380-0815 / +58 (412)
-          381-8253
-        </p>
-        <p><i class="fas fa-envelope"></i> coemiredomiranda@gmail.com</p>
+        <div class="footer-contact">
+          <h3>Atención al Agremiado</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Urb. Campo Alegre, calle 28 de
+            octubre, casa Nro.14, Los Teques, Estado Miranda, Venezuela.
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> +58 (414) 380-0815 / +58 (412)
+            381-8253
+          </p>
+          <p><i class="fas fa-envelope"></i> coemiredomiranda@gmail.com</p>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>
-          &copy; 2026 Colegio de Odontólogos del Estado Miranda (COEMIR).
-          Todos los derechos reservados. Desarrollado con excelencia.
-        </p>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2026 Colegio de Odontólogos del Estado Miranda (COEMIR).
+            Todos los derechos reservados. Desarrollado con excelencia.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <!-- Scripts -->
     <script src="scripts/script.js"></script>
   </body>
